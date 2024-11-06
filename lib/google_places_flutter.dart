@@ -217,6 +217,7 @@ class _GooglePlaceAutoCompleteTextFieldState
                   link: this._layerLink,
                   offset: Offset(0.0, size.height + 5.0),
                   child: Material(
+                             elevation: 4,
                       child: ListView.separated(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
