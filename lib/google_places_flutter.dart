@@ -100,6 +100,12 @@ class _GooglePlaceAutoCompleteTextFieldState
                 style: widget.textStyle,
                 controller: widget.textEditingController,
                 focusNode: widget.focusNode ?? FocusNode(),
+                 validator: (String? arg){
+                 if(arg == null || arg!.isEmpty){
+                 return 'Address Required';
+                   return null;
+                 }
+                 },
                 onChanged: (string) {
                   subject.add(string);
                   if (widget.isCrossBtnShown) {
@@ -217,7 +223,7 @@ class _GooglePlaceAutoCompleteTextFieldState
                   link: this._layerLink,
                   offset: Offset(0.0, size.height + 5.0),
                   child: Material(
-                             elevation: 4,
+                             elevation:2,
                       child: ListView.separated(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
